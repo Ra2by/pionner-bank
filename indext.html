@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pionner bank</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      padding-inline: 100px;
+    }
+    .parent-container {
+      width: 100%;
+      height: 100%;
+    }
+    .container {
+      background-color:;
+      width: 100%;
+      height: 100%;
+      padding-inline: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-block: 30px;
+    }
+    .titel {
+      text-align: center;
+      font-size: 21px;
+    }
+    .info {
+      background-color: aliceblue;
+      width: 100%;
+      padding-inline: 20px;
+      box-shadow: 2px 2px 16px 2px;
+      padding-block: 25px;
+      border-radius: 5px;
+    }
+    .tow-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .input-one {
+      padding-block: 10px;
+      outline: none;
+      border-radius: 5px;
+      border: 2px solid rgb(179, 177, 174);
+    }
+    .input-one:focus {
+      border: 2px solid lightskyblue;
+    }
+    .input-tow {
+      padding-block: 10px;
+      outline: none;
+      margin-bottom: 20px;
+      border: solid 2px rgb(179, 177, 174);
+      border-radius: 5px;
+    }
+    .input-tow:focus {
+      border: 2px solid lightskyblue;
+    }
+    ::placeholder {
+      padding-inline: 5px;
+      font-weight: 700;
+    }
+    .enter-btn {
+      padding-inline: 20px;
+      padding-block: 8px;
+      text-decoration: none;
+      border: none;
+      background-color: green;
+      color: white;
+      border-radius: 3px;
+    }
+    .enter-btn:focus {
+      border: 2px solid rgb(179, 222, 249);
+    }
+    /* akhan theke shuru */
+    #transaction-area {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+    .container-2 {
+      width: 100%;
+      height: 100%;
+      padding-block: 80px;
+    }
+    .parent-box {
+      display: flex;
+
+      justify-content: space-between;
+    }
+    .box {
+      background-color: antiquewhite;
+      width: 260px;
+      height: 150px;
+
+      padding-inline: 15px;
+      color: white;
+      border-radius: 8px;
+    }
+    .box h1 {
+      margin: 0;
+      font-size: 45px;
+    }
+    .box h2 {
+      margin-top: 25px;
+      margin-bottom: 5px;
+    }
+    .child-1 {
+      background-color: slateblue;
+    }
+    .child-2 {
+      background-color: burlywood;
+    }
+    .child-3 {
+      background-color: orange;
+    }
+    .box-tow {
+      margin-top: 50px;
+      display: flex;
+      gap: 25px;
+      justify-content: space-between;
+      padding-inline: 10px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: white;
+      padding-inline: 20px;
+      padding-block: 30px;
+      /* width: 400px; */
+      /* height: 180px; */
+      box-shadow: 2px 2px 16px 2px;
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+    }
+    .box-tow h2 {
+      margin-bottom: 5px;
+    }
+    .first-input {
+      padding-block: 8px;
+      outline: none;
+      border-radius: 5px;
+      border: 2px solid rgb(179, 177, 174);
+      width: 100%;
+    }
+    .first-input:focus {
+      border: 2px solid lightskyblue;
+    }
+
+    @media (max-width: 1160px) {
+      .box-tow {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+      .parent-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  </style>
+  <body>
+    <div class="parent-container">
+      <div id="login-area" class="container">
+        <div class="titel"><h1>welcome to Pionner Bank</h1></div>
+        <div class="info">
+          <h2>Login</h2>
+          <div class="tow-info">
+            <input class="input-one" type="text" placeholder="Email" />
+            <input class="input-tow" type="password" placeholder="password" />
+          </div>
+
+          <button id="enter" class="enter-btn">Enter</button>
+        </div>
+      </div>
+      <!-- scnd part -->
+      <div id="transaction-area">
+        <div class="container-2">
+          <div class="parent-box">
+            <div class="box child-1">
+              <h2>Deposit</h2>
+              <h1>$ <span id="currentDeposite">00</span></h1>
+            </div>
+            <div class="box child-2">
+              <h2>Withdaw</h2>
+              <h1>$ <span id="withdrawcurrent">00</span></h1>
+            </div>
+            <div class="box child-3">
+              <h2>Balance</h2>
+              <h1>$ <span id="currentBalance">1240</span></h1>
+            </div>
+          </div>
+          <div class="box-tow">
+            <div class="childbox-1 item">
+              <h2>Deposit</h2>
+              <div>
+                <input
+                  id="depositNumber"
+                  class="first-input"
+                  type="text"
+                  placeholder="$ amount you want to deposit"
+                />
+              </div>
+              <div>
+                <button id="adddeposite" class="enter-btn">Deposit</button>
+              </div>
+            </div>
+            <div class="childbox-2 item">
+              <h2>Withdraw</h2>
+              <div>
+                <input
+                  id="withdrawnum"
+                  class="first-input"
+                  type="text"
+                  placeholder="$ amount you want to withdraw"
+                />
+              </div>
+              <div>
+                <button id="addwithdraw" class="enter-btn">Withdraw</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // enter event handler
+      var enterBTN = document.getElementById("enter");
+      enterBTN.addEventListener("click", function () {
+        var loginArea = document.getElementById("login-area");
+        loginArea.style.display = "none";
+        var transactionArea = document.getElementById("transaction-area");
+        transactionArea.style.display = "block";
+      });
+      // deposite event handler
+      var depositeAccount = document.getElementById("adddeposite");
+      depositeAccount.addEventListener("click", function () {
+        var adddepositeNumber = document.getElementById("depositNumber").value;
+        var depositeAmount = parseFloat(adddepositeNumber);
+        // deposite current number
+
+        var addcurrentDeposite =
+          document.getElementById("currentDeposite").innerText;
+        var currentDepositeNumber = parseFloat(addcurrentDeposite);
+        var totalDeposite = depositeAmount + currentDepositeNumber;
+        document.getElementById("currentDeposite").innerText = totalDeposite;
+        document.getElementById("depositNumber").value = "";
+        // current balance
+
+        var addcurrentBalance =
+          document.getElementById("currentBalance").innerText;
+        var currentBalancenumber = parseFloat(addcurrentBalance);
+        var totalBalance = depositeAmount + currentBalancenumber;
+        document.getElementById("currentBalance").innerText = totalBalance;
+      });
+      // withdraw event handler
+      var addwithdraw = document.getElementById("addwithdraw");
+      addwithdraw.addEventListener("click", function () {
+        var withdrawamountnum = document.getElementById("withdrawnum").value;
+        var withdrawamount = parseFloat(withdrawamountnum);
+        // withdraw current
+        var withdrawcurrentadd =
+          document.getElementById("withdrawcurrent").innerText;
+        var withdrawcurrentnum = parseFloat(withdrawcurrentadd);
+        var totalwithdraw = withdrawamount + withdrawcurrentnum;
+        document.getElementById("withdrawcurrent").innerText = totalwithdraw;
+        document.getElementById("withdrawnum").value = "";
+        // withdraw balance
+        var withdrawbalance =
+          document.getElementById("currentBalance").innerText;
+        var withdrawbalancenum = parseFloat(withdrawbalance);
+        var withdrawtotal = withdrawbalancenum - withdrawamount;
+        document.getElementById("currentBalance").innerText = withdrawtotal;
+      });
+    </script>
+  </body>
+</html>
